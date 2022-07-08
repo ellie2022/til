@@ -12,5 +12,28 @@
     console.log(`value: ${helloBob}, type: ${typeof helloBob}`);
     console.log('value: ' + helloBob + ' type: '+ typeof helloBob);
 
+ // operators for equality comparison   
+    console.log(`looseEqualCompare '5'==5: ${looseEqualCompare()}`);
+    console.log(`looseDifferCompare '5'!=5: ${looseDifferCompare()}`);
+    console.log(`strictEqualCompare '5'===5: ${strictEqualCompare()}`);
+    console.log(`strictDifferCompare '5'!==5: ${strictDifferCompare()}`);
 
-    
+
+        
+    function looseEqualCompare() {
+        return ('5'==5) ;
+    }
+
+    function looseDifferCompare() {
+        return ('5'!=5);
+    }
+
+    function strictEqualCompare() {
+        return ('5'===5) ;
+    }
+
+    function strictDifferCompare() {
+    return ('5'!==5);
+    }
+
+  
