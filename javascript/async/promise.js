@@ -2,7 +2,7 @@
 
 // js object for async operations
 
-// State : pending -> fulfilled or rejected
+// State : pending(on doing) -> fulfilled or rejected(when finished)
 // Producer vs Consumer
 
 // 1. Producer
@@ -10,8 +10,8 @@ const promise = new Promise((resolve, reject) => {
     // for doing heavy work(network, file reading)
     console.log('doing something...');  // the executor runs automatically
     setTimeout(() => {
-        resolve('ellie');
-        //reject(new Error('no network'));
+        //resolve('ellie');
+        reject(new Error('no network'));
     }, 2000);
 });
 
@@ -40,3 +40,33 @@ fetchNumber
     });
 })
 .then(num => console.log(num));
+
+// 4. Error Handling
+const getHen = () => 
+    new Promise((resolve, reject) => {
+        setTimeout(() => resolve('🐔'), 1000);
+    });
+const getEgg = hen => 
+    new Promise((resolve, reject) => {
+        //setTimeout(() => resolve(`${hen} => 🥚`), 1000);
+        setTimeout(() => reject(), 1000);
+    });
+const cook = egg =>
+    new Promise((resolve, reject) => {
+        setTimeout(() => resolve(`${egg} => 🍳`));
+    });
+
+/* getHen()
+    .then(hen => getEgg(hen))
+    .then(egg => cook(egg))
+    .then(meal => console.log(meal));
+*/
+getHen()
+.then(getEgg)
+.catch(error => {
+    return '🍞'
+})
+.then(cook)
+.then(console.log)
+.catch(console.log);
+
