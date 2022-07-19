@@ -6,4 +6,3 @@
 - vpn server on raspberry pi
 - to connect camera to raspberry pi with EasyCAP
 - web server to monitor porch status via node.js : javascript study
-
