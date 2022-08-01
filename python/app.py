@@ -91,30 +91,33 @@ else:
     print("Sorry, you failed!")
 """
 # Checkup test program
-command_prompt = '>'
-command = ''
-car_started = False
-while command != 'quit':
-    command = input(command_prompt)
-    command = command.lower()
-    if (command == 'help'):
-        print("start - to start the car")
-        print("stop - to stop the car")
-        print("quit - to exit program")
-        # 이 부분은 멀티라인 방식으로 바꿀수 있음
-    elif (command == 'start'):
-        if car_started:
-            print("Car is already started..")
+import humansize
+if __name__ == '__main__':
+    command_prompt = '>'
+    command = ''
+    car_started = False
+    print(humansize.approximate_size(1000000000000, False))
+    while command != 'quit':
+        command = input(command_prompt)
+        command = command.lower()
+        if (command == 'help'):
+            print("start - to start the car")
+            print("stop - to stop the car")
+            print("quit - to exit program")
+            # 이 부분은 멀티라인 방식으로 바꿀수 있음
+        elif (command == 'start'):
+            if car_started:
+                print("Car is already started..")
+            else:
+                print("Car started.. Ready to go!")
+                car_started = True
+        elif (command == 'stop'):
+            if car_started:
+                print("Car stopped")
+                car_started = False
+            else:
+                print("Car is already stopped")
+        elif (command == 'quit'):
+            print("Exiting..")
         else:
-            print("Car started.. Ready to go!")
-            car_started = True
-    elif (command == 'stop'):
-        if car_started:
-            print("Car stopped")
-            car_started = False
-        else:
-            print("Car is already stopped")
-    elif (command == 'quit'):
-        print("Exiting..")
-    else:
-        print("I don't understand that...")
+            print("I don't understand that...")
