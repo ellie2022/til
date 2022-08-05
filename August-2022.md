@@ -34,3 +34,20 @@
     Dictionaries : unordered bags of key-value pairs
 
 
+# Aug-03-2022
+## python 문서 from django page
+### Numbers
+- Coercing integers to floats and vice-versa
+    int() function으로 float를 int화 할때는 truncate됨
+    따라서 -0.9, 0.9 모두 int()후에는 0이 됨 (floor가 아니고 true trucate function)
+    -1.11을 floor하면 내리기 때문에 -2
+    true truncate하면 -1이 된다
+
+    
+# Aug-05-2022
+## python 문서 from django page
+### Numerical operations
+- 11/2 : 5.5 floating point division. 젯수와 피젯수가 정수라도 소수를 돌려줌
+- 11//2 : 5  나눈 후 소수점 이하는 버리고 정수값만 리턴
+- -11/2 : -6 음수일때는 floor한 값을 리턴한다. (floor division)
+
