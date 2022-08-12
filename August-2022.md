@@ -51,3 +51,45 @@
 - 11//2 : 5  나눈 후 소수점 이하는 버리고 정수값만 리턴
 - -11/2 : -6 음수일때는 floor한 값을 리턴한다. (floor division)
 
+# Aug-12-2022
+## python 문서 from django page
+### Numbers in a boolean context 
+- Zero values are false, and non-zero values are true.
+### Lists
+- 생성 : square bracket으로 둘러싸고 comma로 분리
+    ex) a_list = ['a', 'b', 'ground', 'z', 'end']
+    list.py에서 연습한 내용 참조
+
+### Tuples : an immutable list
+- 괄호로 둘러싸고 comma로 분리.  변경할 수 없는 리스트. 한번 생성되면 바꿀 수 없다.
+    ex) a_tuple = ('a', 'b', 'ground', 'z', 'end')
+- list와 다른점은 변경할 수 없다는 것.  
+    그리고 append(), extend(), insert(), remove(), pop() 등 변경가능한 method가 없다는 것
+- 다중 값을 한번에 할당하기
+    ex) v = ('a', 2, True)
+        (x, y, z) = v
+    위와 같이 하면, x, y, z에 v의 값이 차례로 할당됨
+    어떤 이름에 범위의 값을 할당하고 싶을 때..
+    ex) (MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY) = range(7)
+    이렇게 하면, MONDAY는 0, TUESDAY는 1, SUNDAY는 6이 된다.
+
+### Sets
+- set은 unordered bag of unique values
+    set에는 변경가능한 데이터유형의 값이 들어갈 수 있다.
+    2개의 set에 대하여 표준 set operation(union, intersection, set difference 등)을 수행할 수 있다.
+- 생성 : 중괄호로 둘러싸고 comma로 분리
+    ex) a_set = {1}
+    a_set = {1, 2}
+- list로부터 set을 생성하는 것도 가능하다 : 
+    a_list = ['a', 'b', 'ground', True, False, 42]
+    a_set = set(a_list)
+    이렇게 하면 a_set은...: 
+    {'a', False, 'b', True, 'ground', 42}
+    set은 unordered이기 때문에 list의 순서를 기억하지 않는다.
+    이떄 원래 list는 변하지 않음
+- set의 값을 변경하는 method : add(), update()
+    set의 원소는 unique vlaue이므로, 동일한 내용을 add하면 아무 일도 일어나지 않음
+    --> 에러가 나지 않고, 그냥 no-op임
+    
+
+
